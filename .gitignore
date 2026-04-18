@@ -13,3 +13,6 @@ target/
 *.jar
 *.war
 .DS_Store
+*.md
+*.pdf
+*.csv
