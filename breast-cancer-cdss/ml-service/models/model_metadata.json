@@ -1,0 +1,8 @@
+{
+  "model_type": "AdaBoost",
+  "accuracy": 0.9736842105263158,
+  "precision": 1.0,
+  "recall": 0.9285714285714286,
+  "f1_score": 0.9629629629629629,
+  "trained_date": "2026-03-30 14:19:00"
+}
