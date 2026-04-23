@@ -23,4 +23,4 @@ try:
     print(f"Status Code: {response.status_code}")
     print(json.dumps(response.json(), indent=2))
 except Exception as e:
-    print(f"Error: {e}")
+    print(f"Error: {e}")  
