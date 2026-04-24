@@ -10,18 +10,25 @@ const DoctorDashboard = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [showProfileModal, setShowProfileModal] = useState(false);
 
-    // Mock Data (Enhanced)
-    const stats = [
-        { label: 'Total Patients', value: '248', icon: <Users size={24} className="text-blue-600" />, trend: '+12 this month', color: 'bg-blue-50' },
-        { label: 'Accuracy Rate', value: '97.2%', icon: <Activity size={24} className="text-green-600" />, trend: '+0.5% vs avg', color: 'bg-green-50' },
-        { label: 'Pending Reviews', value: '18', icon: <FileText size={24} className="text-orange-600" />, trend: '5 urgent', color: 'bg-orange-50' },
-    ];
 
     const recentActivity = [
         { id: 1, text: 'Prediction run for Patient #145', time: '2 hours ago', icon: <Activity size={16} /> },
         { id: 2, text: 'New patient registered: Sarah Connor', time: '5 hours ago', icon: <Users size={16} /> },
         { id: 3, text: 'Medical record updated for ID #0092', time: '1 day ago', icon: <FileText size={16} /> },
     ];
+    // Mock Data (Enhanced)
+    const stats = [
+        { label: 'Total Patients', value: '248', icon: <Users size={24} className="text-blue-600" />, trend: '+12 this month', color: 'bg-blue-50' },
+        { label: 'Accuracy Rate', value: '97.2%', icon: <Activity size={24} className="text-green-600" />, trend: '+0.5% vs avg', color: 'bg-green-50' },
+        { label: 'Pending Reviews', value: '18', icon: <FileText size={24} className="text-orange-600" />, trend: '5 urgent', color: 'bg-orange-50' },
+    ];
+    
+
+    // const recentActivity = [
+    //     { id: 1, text: 'Prediction run for Patient #145', time: '2 hours ago', icon: <Activity size={16} /> },
+    //     { id: 2, text: 'New patient registered: Sarah Connor', time: '5 hours ago', icon: <Users size={16} /> },
+    //     { id: 3, text: 'Medical record updated for ID #0092', time: '1 day ago', icon: <FileText size={16} /> },
+    // ];
 
     const [patients, setPatients] = useState([]);
 
@@ -31,7 +38,7 @@ const DoctorDashboard = () => {
                 const response = await PatientService.getAllPatients();
                 setPatients(response.data);
             } catch (error) {
-                console.error("Error fetching patients", error);
+                console.error("Error", error);
             }
         };
         fetchPatients();
@@ -61,7 +68,7 @@ const DoctorDashboard = () => {
             {/* Sidebar */}
             <aside className="w-72 bg-gradient-to-b from-pink-700 to-rose-600 text-white flex-shrink-0 hidden md:block sticky top-0 h-screen shadow-2xl">
                 <div className="p-8">
-                    <div className="flex items-center gap-3 mb-10">
+                    <div className="flex items-center gap-4 mb-9">
                         <Activity className="w-8 h-8 text-pink-200" />
                         <h2 className="text-2xl font-bold font-serif tracking-wide">MedAI<span className="text-pink-200">.</span></h2>
                     </div>
@@ -78,7 +85,7 @@ const DoctorDashboard = () => {
                         <NavItem icon={<Settings size={20} />} label="Configuration" />
                         <button
                             onClick={logout}
-                            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition-colors text-pink-100 hover:text-white mt-4"
+                            className="w-full flex items-center gap-2 px-5 py-4 rounded-xl hover:bg-white/10 transition-colors text-pink-100 hover:text-white mt-4"
                         >
                             <LogOut size={20} />
                             <span>Sign Out</span>
