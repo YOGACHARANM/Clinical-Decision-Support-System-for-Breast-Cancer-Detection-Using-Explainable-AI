@@ -6,8 +6,9 @@ DROP TABLE IF EXISTS audit_logs;
 DROP TABLE IF EXISTS predictions;
 DROP TABLE IF EXISTS medical_records;
 DROP TABLE IF EXISTS doctors;
-DROP TABLE IF EXISTS patients;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS patients;
+
 
 -- Users Table
 CREATE TABLE users (
@@ -112,7 +113,8 @@ CREATE TABLE predictions (
     INDEX idx_date (prediction_date)
 );
 
--- Audit Logs
+
+-- Audit 
 CREATE TABLE audit_logs (
     log_id BIGINT PRIMARY KEY AUTO_INCREMENT,
     user_id BIGINT,
