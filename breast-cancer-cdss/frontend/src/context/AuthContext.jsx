@@ -13,17 +13,20 @@ export const AuthProvider = ({ children }) => {
         setLoading(false);
     }, []);
 
+    
     const login = async (email, password) => {
         const data = await AuthService.login(email, password);
         setUser(data);
         return data;
     };
 
+    
     const logout = () => {
         AuthService.logout();
         setUser(null);
     };
 
+    
     return (
         <AuthContext.Provider value={{ user, login, logout, loading }}>
             {!loading && children}
