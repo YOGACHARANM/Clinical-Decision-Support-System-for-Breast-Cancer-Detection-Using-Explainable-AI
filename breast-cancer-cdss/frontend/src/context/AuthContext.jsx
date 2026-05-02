@@ -4,6 +4,7 @@ import { AuthService } from '../services/api';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+    
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -13,21 +14,17 @@ export const AuthProvider = ({ children }) => {
         setLoading(false);
     }, []);
 
-    
     const login = async (email, password) => {
         const data = await AuthService.login(email, password);
         setUser(data);
         return data;
     };
 
-    
     const logout = () => {
         AuthService.logout();
         setUser(null);
     };
-
-    
-    return (
+        return (
         <AuthContext.Provider value={{ user, login, logout, loading }}>
             {!loading && children}
         </AuthContext.Provider>
