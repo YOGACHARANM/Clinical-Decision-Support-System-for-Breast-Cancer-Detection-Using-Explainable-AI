@@ -32,7 +32,7 @@ const LoginPage = ({ role }) => {
                 return;
             }
 
-            // Redirect based on role
+            // Redirect based roles
             if (data.role === 'DOCTOR') navigate('/doctor-dashboard');
             else navigate('/patient-dashboard');
         } catch (err) {
@@ -66,7 +66,6 @@ const LoginPage = ({ role }) => {
                         {error}
                     </div>
                 )}
-
                 <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-1.5">Email Address</label>
@@ -91,7 +90,6 @@ const LoginPage = ({ role }) => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-
                     <div className="flex justify-between items-center text-sm">
                         <label className="flex items-center text-gray-500 cursor-pointer">
                             <input type="checkbox" className="mr-2 rounded text-pink-600 focus:ring-pink-500" /> Remember me
