@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { PatientService } from '../services/api';
-import { Link } from 'react-router-dom';
 import { Users, FileText, Activity, Search, Bell, Calendar, ChevronRight, LogOut, PieChart, Settings } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -26,8 +26,7 @@ const DoctorDashboard = () => {
 
     // const recentActivity = [
     //     { id: 1, text: 'Prediction run for Patient #145', time: '2 hours ago', icon: <Activity size={16} /> },
-    //     { id: 2, text: 'New patient registered: Sarah Connor', time: '5 hours ago', icon: <Users size={16} /> },
-    //     { id: 3, text: 'Medical record updated for ID #0092', time: '1 day ago', icon: <FileText size={16} /> },
+    //     { id: 2, text: 'Medical record updated for ID #0092', time: '1 day ago', icon: <FileText size={16} /> },
     // ];
 
     const [patients, setPatients] = useState([]);
@@ -76,6 +75,7 @@ const DoctorDashboard = () => {
                     <nav className="space-y-2">
                         <NavItem icon={<PieChart size={20} />} label="Overview" active />
                         <NavItem icon={<Users size={20} />} label="My Patients" />
+                        
                         <NavItem icon={<Activity size={20} />} label="AI Predictions" />
                         <NavItem icon={<FileText size={20} />} label="Reports" />
                         <NavItem icon={<Calendar size={20} />} label="Schedule" />
@@ -95,8 +95,10 @@ const DoctorDashboard = () => {
             </aside>
 
             {/* Main Content */}
+            
             <main className="flex-1 overflow-auto relative">
                 {/* Header */}
+                
                 <header className="bg-white/80 backdrop-blur-md sticky top-0 z-30 px-8 py-4 flex justify-between items-center border-b border-gray-100 shadow-sm">
                     <div className="relative">
                         <div className="flex items-center gap-4 bg-gray-100 rounded-full px-4 py-2 w-96 focus-within:ring-2 focus-within:ring-pink-200 transition-all">
@@ -110,6 +112,7 @@ const DoctorDashboard = () => {
                             />
                         </div>
                         {/* Search Dropdown */}
+                        
                         {searchQuery && (
                             <div className="absolute top-full left-0 w-full mt-2 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50">
                                 {filteredPatients.length > 0 ? (
