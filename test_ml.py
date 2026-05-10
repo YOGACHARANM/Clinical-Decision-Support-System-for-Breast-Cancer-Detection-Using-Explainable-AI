@@ -10,7 +10,7 @@ data = {
         "perimeter_worst": 184.6,
         "area_se": 153.4,
         "texture_worst": 17.33,
-        "symmetry_worst": 0.4601,
+        "symmetry_worst": 0.460,
         "compactness_mean": 0.2776,
         "concave points_mean": 0.1471,
         "smoothness_mean": 0.1184
