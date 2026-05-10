@@ -4,7 +4,7 @@ import json
 url = "http://localhost:5000/predict"
 data = {
     "features": {
-        "concave points_worst": 0.2654,
+        "concave points_worst": 0.265,
         "texture_mean": 17.99,
         "compactness_se": 0.0490,
         "perimeter_worst": 184.6,
